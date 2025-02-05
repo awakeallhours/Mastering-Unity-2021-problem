@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
+  - {fileID: 2100000, guid: 392022be411a28d4295ece6967555efa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -661,9 +661,11 @@ GameObject:
   m_Component:
   - component: {fileID: 348206096115593443}
   - component: {fileID: 8683039315735648414}
+  - component: {fileID: 3180262415027789148}
   - component: {fileID: 7874846285531871451}
   - component: {fileID: 3442573640490286962}
-  - component: {fileID: 3180262415027789148}
+  - component: {fileID: 47783182448573733}
+  - component: {fileID: -3649770470555092002}
   m_Layer: 0
   m_Name: EnemyObj_Spikes
   m_TagString: Untagged
@@ -710,33 +712,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.75
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7874846285531871451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7020072703580530710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b90dabd6adc88a4daa164b063cfe864, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3442573640490286962
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7020072703580530710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a88b9712f9167fa4687829a3dee7518f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _healthChange: -5
-  _applyToTarget: 0
-  _destroyOnCollision: 0
 --- !u!54 &3180262415027789148
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -764,3 +739,64 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &7874846285531871451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7020072703580530710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b90dabd6adc88a4daa164b063cfe864, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3442573640490286962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7020072703580530710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b9712f9167fa4687829a3dee7518f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthChange: -5
+  _applyToTarget: 0
+  _destroyOnCollision: 0
+--- !u!114 &47783182448573733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7020072703580530710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f9d7448cef482748b2848780d2c55c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mainExplosionChunk: {fileID: 3048503563885516774, guid: 4d62aa89d1c0aa6448b8622be68b305d, type: 3}
+  _secondaryExplosionChunk: {fileID: 7057195294214323574, guid: be66795a7175bf146b29c3a5cd6070f0, type: 3}
+  _minChunks: 20
+  _maxChunks: 40
+  _explosionForce: 1500
+--- !u!114 &-3649770470555092002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7020072703580530710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3c94d5c6f5debf42bf0d6ca90d945eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthMax: 1
+  _healthCur: 1
+  _invincibilityFramesMax: 0
+  _invincibilityFramesCur: 0
+  _isDead: 0

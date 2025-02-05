@@ -29,6 +29,7 @@ public class HealthModifier : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         GameObject hitObj = collision.gameObject;
+        Debug.Log(hitObj.name);
         
         //get the healthmanager of the object we've hit
 
@@ -64,7 +65,11 @@ public class HealthModifier : MonoBehaviour
         }
 
         else if (_applyToTarget == DamageTarget.Enemies && possibleTarget.GetComponent<AIBrain>())
+        {
+            Debug.Log("Spikes hit");
             return true;
+        }
+           
 
         //not a valid target
         Debug.Log("Invalid");

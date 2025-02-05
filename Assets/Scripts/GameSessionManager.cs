@@ -46,6 +46,11 @@ public class GameSessionManager : MonoBehaviour
             //use a life to respawn the player
             _playerLives--;
 
+            //clear the velocity of this object
+            Rigidbody rb = player.transform.GetComponent<Rigidbody>();
+            if (rb)
+                rb.linearVelocity = Vector3.zero;
+
             //reset health 
             HealthManager playerHealth = player.GetComponent<HealthManager>();
             if (playerHealth) 

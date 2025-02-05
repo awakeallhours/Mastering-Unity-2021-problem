@@ -74,6 +74,7 @@ public class ItemSpawnZone : MonoBehaviour
     void SpawnObjectsInCircle()
     {
         //List<bool> seatTaken = new List<bool>();
+        //Vector3 originalScale = _itemToSpawn.transform.localScale;
 
         float radius = _spawnZone.bounds.max.x / 2;
         Transform parent = this.gameObject.transform;
@@ -92,7 +93,7 @@ public class ItemSpawnZone : MonoBehaviour
             newObj.transform.localPosition = pos;
 
             //scale seems to be what is causing the issues 
-            _itemToSpawn.transform.localScale = new Vector3(1, 0.5f, 1);
+            //_itemToSpawn.transform.localScale = originalScale;
         }
     }
 }

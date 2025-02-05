@@ -36,6 +36,12 @@ public class HealthManager : MonoBehaviour
 
         }
 
+        if (_isDead) 
+        { 
+            VFXHandler vfx = GetComponent<VFXHandler>();
+            vfx?.SpawnExplosion();
+        }
+
         if (GetComponent<MeshRenderer>())
         {
             if (_invincibilityFramesCur > 0)
@@ -61,6 +67,13 @@ public class HealthManager : MonoBehaviour
                 camShake.enabled = (bool)(_invincibilityFramesCur > 0);
             }
 
+        }
+
+        //insta death when we are in an endless pit
+        float yBounds = -25f;
+        if(transform.position.y < yBounds)
+        {
+            _isDead = true;
         }
     }
 

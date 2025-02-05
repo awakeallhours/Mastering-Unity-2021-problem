@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     private float _movementFriction = 0.1f;
 
     [SerializeField, Tooltip("The bullet prefab to fire")] private GameObject _bulletToSpawn;
-    [SerializeField, Tooltip("The direction that the player is facing")] Vector3 _curFacing = Vector3.zero;
+    [SerializeField, Tooltip("The direction that the player is facing")] Vector3 _curFacing = new Vector3(1,0,0);
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -26,26 +26,32 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.RightArrow))
         {
             curSpeed.x += (_movementAcceleration * Time.deltaTime);
+            _curFacing.x = 1;
+            _curFacing.z = 0;
         }
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             curSpeed.x -= (_movementAcceleration * Time.deltaTime);
+            _curFacing.x = -1;
+            _curFacing.z = 0;
         }
 
         if (Input.GetKey(KeyCode.UpArrow))
         {
             curSpeed.z += (_movementAcceleration * Time.deltaTime);
+            _curFacing.x = 1;
+            _curFacing.z = 0;
         }
 
         if (Input.GetKey(KeyCode.DownArrow))
         {
             curSpeed.z -= (_movementAcceleration * Time.deltaTime);
+            _curFacing.x = -1;
+            _curFacing.z = 0;
         }
 
-        //strore the current facing
-        if(curSpeed.x != 0 && curSpeed.y != 0)
-            _curFacing = curSpeed.normalized;
+        
 
         //fire the weapon
         if (Input.GetKeyDown(KeyCode.Return))
